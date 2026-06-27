@@ -30,10 +30,10 @@ section {
 }
 
 .card {
-  background: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.9);
   padding: 38px;
   border-radius: 30px;
-  max-width: 760px;
+  max-width: 780px;
   width: 100%;
   box-shadow: 0 15px 40px rgba(180,80,120,0.22);
   border: 1px solid rgba(255,255,255,0.9);
@@ -79,15 +79,6 @@ button:hover {
   display: none;
 }
 
-.memory-card {
-  background: #fff0f7;
-  padding: 20px;
-  border-radius: 20px;
-  margin: 14px 0;
-  border: 1px solid #ffc8df;
-}
-
-/* Envelope */
 .envelope {
   font-size: 120px;
   cursor: pointer;
@@ -99,7 +90,6 @@ button:hover {
   50% { transform: translateY(-12px); }
 }
 
-/* Falling pink flowers */
 .flower {
   position: fixed;
   top: -50px;
@@ -123,7 +113,6 @@ button:hover {
   }
 }
 
-/* Floating hearts */
 .heart {
   position: fixed;
   animation: floatUp 5s linear forwards;
@@ -144,11 +133,11 @@ button:hover {
 }
 
 #surprise {
-  font-size: 30px;
+  font-size: 24px;
   margin-top: 25px;
   color: #d94f8c;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 @media (max-width: 600px) {
@@ -210,37 +199,34 @@ button:hover {
       I love you so much, today, tomorrow, and always. 💗
     </p>
 
-    <button onclick="showMemories()">See Our Memories 📸</button>
+    <button onclick="showFinalSection()">Open My Final Surprise 🎁</button>
   </div>
 </section>
 
-<section id="memorySection" class="hidden">
+<section id="finalSection" class="hidden">
   <div class="card">
-    <h2>Our Beautiful Memories 💗</h2>
+    <h2>Just One More Thing... 💗</h2>
 
-    <div class="memory-card">🌸 Our first special moment</div>
-    <div class="memory-card">💕 The times we laughed together</div>
-    <div class="memory-card">🌙 The little memories I never forget</div>
-    <div class="memory-card">🌷 Every moment with you feels special</div>
-
-    <button onclick="showReasons()">Why I Love You 💗</button>
-  </div>
-</section>
-
-<section id="reasonSection" class="hidden">
-  <div class="card">
-    <h2>Why I Love You 💗</h2>
-
-    <div class="memory-card">Your smile makes my day better.</div>
-    <div class="memory-card">Your kindness means so much to me.</div>
-    <div class="memory-card">You make me feel calm and happy.</div>
-    <div class="memory-card">You are my favorite person.</div>
+    <p>
+      No matter what happens...<br><br>
+      No matter how many arguments we have...<br><br>
+      No matter how difficult life becomes...<br><br>
+      I will always choose you.<br><br>
+      Yesterday.<br>
+      Today.<br>
+      Tomorrow.<br>
+      And every tomorrow after that. 🤍
+    </p>
 
     <button onclick="showFinal()">Click for Surprise 🎁</button>
 
     <div id="surprise" class="hidden">
-      No matter what happens,<br>
-      I will always choose you 💗
+      <h2>I Love You 💗</h2>
+      <p>
+        Thank you for being my home, my comfort, my safe place,
+        and my favorite person.<br><br>
+        Forever and always. 🤍
+      </p>
     </div>
   </div>
 </section>
@@ -249,11 +235,13 @@ button:hover {
 function createFlower() {
   const flowers = ["🌸", "🌷", "🌺", "💮", "🌼", "💗"];
   const flower = document.createElement("div");
+
   flower.className = "flower";
   flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
   flower.style.left = Math.random() * 100 + "vw";
   flower.style.animationDuration = 6 + Math.random() * 6 + "s";
   flower.style.fontSize = 20 + Math.random() * 18 + "px";
+
   document.body.appendChild(flower);
 
   setTimeout(() => flower.remove(), 12000);
@@ -271,14 +259,9 @@ function showLetter() {
   document.getElementById("letterSection").scrollIntoView({ behavior: "smooth" });
 }
 
-function showMemories() {
-  document.getElementById("memorySection").classList.remove("hidden");
-  document.getElementById("memorySection").scrollIntoView({ behavior: "smooth" });
-}
-
-function showReasons() {
-  document.getElementById("reasonSection").classList.remove("hidden");
-  document.getElementById("reasonSection").scrollIntoView({ behavior: "smooth" });
+function showFinalSection() {
+  document.getElementById("finalSection").classList.remove("hidden");
+  document.getElementById("finalSection").scrollIntoView({ behavior: "smooth" });
 }
 
 function showFinal() {
@@ -289,10 +272,12 @@ function showFinal() {
 function createHearts() {
   for (let i = 0; i < 45; i++) {
     const heart = document.createElement("div");
+
     heart.className = "heart";
     heart.innerHTML = "💗";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDelay = Math.random() * 2 + "s";
+
     document.body.appendChild(heart);
 
     setTimeout(() => heart.remove(), 6000);
