@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For My Love</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#ffd6e8, #fff3f8);
+      text-align: center;
+      padding: 40px;
+      color: #5c2a3d;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background: #ff6fae;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #message {
+      display: none;
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Hi My Love ❤️</h1>
+    <p>This website is made specially for you.</p>
+
+    <h2>Things I Love About You</h2>
+    <p>Your smile, your kindness, and the way you make my day better.</p>
+
+    <button onclick="showMessage()">Click for a surprise</button>
+
+    <p id="message">I love you so much ❤️ You are my favorite person.</p>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById("message").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
