@@ -1,390 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For My Princess 🤍</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Princess 💗</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: "Georgia", serif;
-      background: linear-gradient(180deg, #eef8e8, #fffaf0);
-      color: #36553b;
-      text-align: center;
-      overflow-x: hidden;
-    }
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: linear-gradient(180deg, #ffd6e8, #fff7fb);
+  color: #5c2a3d;
+  text-align: center;
+  overflow-x: hidden;
+}
 
-    section {
-      min-height: 100vh;
-      padding: 70px 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
+section {
+  min-height: 100vh;
+  padding: 70px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
 
-    .card {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 38px;
-      border-radius: 30px;
-      max-width: 760px;
-      width: 100%;
-      box-shadow: 0 15px 40px rgba(70, 100, 70, 0.18);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      animation: fadeIn 1.2s ease;
-    }
+.card {
+  background: rgba(255,255,255,0.88);
+  padding: 38px;
+  border-radius: 30px;
+  max-width: 760px;
+  width: 100%;
+  box-shadow: 0 15px 40px rgba(180,80,120,0.22);
+  border: 1px solid rgba(255,255,255,0.9);
+}
 
-    h1 {
-      font-size: 46px;
-      margin-bottom: 15px;
-    }
+h1 {
+  font-size: 46px;
+  color: #d94f8c;
+}
 
-    h2 {
-      font-size: 32px;
-    }
+h2 {
+  font-size: 32px;
+  color: #7d3f58;
+}
 
-    p {
-      font-size: 18px;
-      line-height: 1.7;
-    }
+p {
+  font-size: 18px;
+  line-height: 1.7;
+}
 
-    .quote {
-      font-style: italic;
-      font-size: 21px;
-      color: #557a55;
-    }
+.quote {
+  font-style: italic;
+  font-size: 21px;
+}
 
-    button {
-      background: #7fad7f;
-      color: white;
-      border: none;
-      padding: 14px 28px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-size: 17px;
-      margin: 12px;
-      transition: 0.3s;
-      box-shadow: 0 8px 18px rgba(80, 120, 80, 0.25);
-    }
+button {
+  background: #ff6fae;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 17px;
+  margin: 12px;
+  box-shadow: 0 8px 18px rgba(255,111,174,0.35);
+}
 
-    button:hover {
-      transform: scale(1.07);
-      background: #6b9d6b;
-    }
+button:hover {
+  transform: scale(1.07);
+}
 
-    .hidden {
-      display: none;
-    }
+.hidden {
+  display: none;
+}
 
-    .letter {
-      font-size: 18px;
-    }
+.memory-card {
+  background: #fff0f7;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 14px 0;
+  border: 1px solid #ffc8df;
+}
 
-    .memory-card {
-      background: #f4fbef;
-      padding: 20px;
-      border-radius: 20px;
-      margin: 14px 0;
-      border: 1px solid #d8ecd2;
-      box-shadow: 0 5px 15px rgba(100, 140, 100, 0.08);
-    }
+/* Envelope */
+.envelope {
+  font-size: 120px;
+  cursor: pointer;
+  animation: bounce 1.6s infinite;
+}
 
-    #surprise {
-      font-size: 30px;
-      margin-top: 25px;
-      color: #5c8f5c;
-      font-weight: bold;
-      line-height: 1.5;
-    }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
 
-    /* Lily of the Valley falling flower */
-    .lily {
-      position: fixed;
-      top: -80px;
-      width: 38px;
-      height: 70px;
-      z-index: 1;
-      pointer-events: none;
-      animation: fall linear forwards;
-      opacity: 0.9;
-    }
+/* Falling pink flowers */
+.flower {
+  position: fixed;
+  top: -50px;
+  font-size: 26px;
+  animation: fall linear forwards;
+  pointer-events: none;
+  z-index: 1;
+}
 
-    .stem {
-      width: 3px;
-      height: 58px;
-      background: #6f9f6f;
-      border-radius: 10px;
-      margin: auto;
-      transform: rotate(15deg);
-    }
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
 
-    .bell {
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      background: white;
-      border-radius: 50% 50% 60% 60%;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.12);
-    }
+/* Floating hearts */
+.heart {
+  position: fixed;
+  animation: floatUp 5s linear forwards;
+  font-size: 28px;
+  pointer-events: none;
+  z-index: 5;
+}
 
-    .bell1 {
-      top: 18px;
-      left: 18px;
-    }
+@keyframes floatUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
 
-    .bell2 {
-      top: 32px;
-      left: 8px;
-    }
+#surprise {
+  font-size: 30px;
+  margin-top: 25px;
+  color: #d94f8c;
+  font-weight: bold;
+  line-height: 1.5;
+}
 
-    .bell3 {
-      top: 46px;
-      left: 20px;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-10vh) rotate(0deg);
-        opacity: 0;
-      }
-
-      10% {
-        opacity: 1;
-      }
-
-      100% {
-        transform: translateY(115vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    /* Floating hearts */
-    .heart {
-      position: fixed;
-      animation: floatUp 5s linear forwards;
-      font-size: 26px;
-      pointer-events: none;
-      z-index: 5;
-    }
-
-    @keyframes floatUp {
-      from {
-        transform: translateY(100vh);
-        opacity: 1;
-      }
-
-      to {
-        transform: translateY(-10vh);
-        opacity: 0;
-      }
-    }
-
-    /* Soft glowing dots */
-    .glow {
-      position: fixed;
-      width: 7px;
-      height: 7px;
-      background: #fff6b7;
-      border-radius: 50%;
-      box-shadow: 0 0 12px #fff6b7;
-      animation: glowFloat 6s linear forwards;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    @keyframes glowFloat {
-      from {
-        transform: translateY(100vh);
-        opacity: 0.8;
-      }
-
-      to {
-        transform: translateY(-10vh);
-        opacity: 0;
-      }
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 34px;
-      }
-
-      h2 {
-        font-size: 26px;
-      }
-
-      .card {
-        padding: 28px;
-      }
-    }
-  </style>
+@media (max-width: 600px) {
+  h1 { font-size: 34px; }
+  h2 { font-size: 26px; }
+  .card { padding: 28px; }
+  .envelope { font-size: 90px; }
+}
+</style>
 </head>
 
 <body>
 
-  <section>
-    <div class="card">
-      <h1>To My Princess 🤍🌿</h1>
-      <p class="quote">
-        Every flower blooms because of the sun.<br>
-        I bloom because of you.
-      </p>
-      <p>I made this little website specially for you.</p>
-      <button onclick="showLetter()">Open My Heart 💌</button>
+<section>
+  <div class="card">
+    <h1>To My Princess 💗🌸</h1>
+    <p class="quote">
+      Every flower blooms because of the sun.<br>
+      I bloom because of you.
+    </p>
+    <p>I made this little website specially for you.</p>
+    <button onclick="showEnvelope()">Open My Heart 💌</button>
+  </div>
+</section>
+
+<section id="envelopeSection" class="hidden">
+  <div class="card">
+    <h2>A Letter Just For You 💌</h2>
+    <div class="envelope" onclick="showLetter()">💌</div>
+    <p>Click the envelope to open it</p>
+  </div>
+</section>
+
+<section id="letterSection" class="hidden">
+  <div class="card">
+    <h2>My Letter To You 💌</h2>
+
+    <p>
+      Dear Izzah,<br><br>
+
+      Thank you for being someone so special in my life. You make my days brighter, my heart softer, and my life happier. I am truly grateful for every moment we've shared together. From the very first time we started talking, I had a feeling that you were someone I wanted to build a future with, grow old with, and create countless beautiful memories together.
+      <br><br>
+
+      No matter what happens, whether it's disagreements, misunderstandings, or difficult times, I want you to know that I will always stay by your side. Through every smile and every challenge, you will always be my special person, and I will never stop choosing you. 💗
+      <br><br>
+
+      Lily of the Valley is your favorite flower, and every time I see it, it reminds me of you. It reminds me of your gentle heart, your kindness, and the happiness you bring into my life.
+      <br><br>
+
+      I also want to say that I am truly sorry for everything that has happened between us. Whether I hurt you intentionally or unintentionally, I never want to be the reason behind your sadness. I'm sorry for the times I've disappointed you, made you cry, or made you feel anything less than how truly loved you are. You deserve so much better, and I promise that I'll continue learning, growing, and becoming a better person for us.
+      <br><br>
+
+      I hope this little gesture brings a smile to your face because you deserve all the happiness, all the love, and every beautiful thing this world has to offer.
+      <br><br>
+
+      Thank you for loving me, for believing in me, and for staying with me through everything.
+      <br><br>
+
+      I love you so much, today, tomorrow, and always. 💗
+    </p>
+
+    <button onclick="showMemories()">See Our Memories 📸</button>
+  </div>
+</section>
+
+<section id="memorySection" class="hidden">
+  <div class="card">
+    <h2>Our Beautiful Memories 💗</h2>
+
+    <div class="memory-card">🌸 Our first special moment</div>
+    <div class="memory-card">💕 The times we laughed together</div>
+    <div class="memory-card">🌙 The little memories I never forget</div>
+    <div class="memory-card">🌷 Every moment with you feels special</div>
+
+    <button onclick="showReasons()">Why I Love You 💗</button>
+  </div>
+</section>
+
+<section id="reasonSection" class="hidden">
+  <div class="card">
+    <h2>Why I Love You 💗</h2>
+
+    <div class="memory-card">Your smile makes my day better.</div>
+    <div class="memory-card">Your kindness means so much to me.</div>
+    <div class="memory-card">You make me feel calm and happy.</div>
+    <div class="memory-card">You are my favorite person.</div>
+
+    <button onclick="showFinal()">Click for Surprise 🎁</button>
+
+    <div id="surprise" class="hidden">
+      No matter what happens,<br>
+      I will always choose you 💗
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="letterSection" class="hidden">
-    <div class="card letter">
-      <h2>My Letter To You 💌</h2>
-      <p>
-        Dear my love,<br><br>
+<script>
+function createFlower() {
+  const flowers = ["🌸", "🌷", "🌺", "💮", "🌼", "💗"];
+  const flower = document.createElement("div");
+  flower.className = "flower";
+  flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.animationDuration = 6 + Math.random() * 6 + "s";
+  flower.style.fontSize = 20 + Math.random() * 18 + "px";
+  document.body.appendChild(flower);
 
-        Thank you for being someone so special in my life.
-        You make my days brighter, my heart softer, and my life happier.
-        I am grateful for every moment with you.
-        <br><br>
+  setTimeout(() => flower.remove(), 12000);
+}
 
-        Like a Lily of the Valley, you are gentle, beautiful, and precious.
-        You bring peace into my heart in ways I cannot fully explain.
-        <br><br>
+setInterval(createFlower, 300);
 
-        I hope this small website makes you smile, because you deserve
-        all the happiness in the world.
-        <br><br>
+function showEnvelope() {
+  document.getElementById("envelopeSection").classList.remove("hidden");
+  document.getElementById("envelopeSection").scrollIntoView({ behavior: "smooth" });
+}
 
-        I love you so much 🤍
-      </p>
+function showLetter() {
+  document.getElementById("letterSection").classList.remove("hidden");
+  document.getElementById("letterSection").scrollIntoView({ behavior: "smooth" });
+}
 
-      <button onclick="showMemories()">See Our Memories 📸</button>
-    </div>
-  </section>
+function showMemories() {
+  document.getElementById("memorySection").classList.remove("hidden");
+  document.getElementById("memorySection").scrollIntoView({ behavior: "smooth" });
+}
 
-  <section id="memorySection" class="hidden">
-    <div class="card">
-      <h2>Our Memories 📸</h2>
+function showReasons() {
+  document.getElementById("reasonSection").classList.remove("hidden");
+  document.getElementById("reasonSection").scrollIntoView({ behavior: "smooth" });
+}
 
-      <div class="memory-card">🌸 Our first special moment</div>
-      <div class="memory-card">💕 The times we laughed together</div>
-      <div class="memory-card">🌙 The little memories I never forget</div>
-      <div class="memory-card">🤍 Every moment with you feels special</div>
+function showFinal() {
+  document.getElementById("surprise").classList.remove("hidden");
+  createHearts();
+}
 
-      <button onclick="showReasons()">Why I Love You 🤍</button>
-    </div>
-  </section>
+function createHearts() {
+  for (let i = 0; i < 45; i++) {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDelay = Math.random() * 2 + "s";
+    document.body.appendChild(heart);
 
-  <section id="reasonSection" class="hidden">
-    <div class="card">
-      <h2>Why I Love You 🤍</h2>
-
-      <div class="memory-card">Your smile makes my day better.</div>
-      <div class="memory-card">Your kindness means so much to me.</div>
-      <div class="memory-card">You make me feel calm and happy.</div>
-      <div class="memory-card">You are my favorite person.</div>
-
-      <button onclick="showFinal()">Click for Surprise 🎁</button>
-
-      <div id="surprise" class="hidden">
-        No matter what happens,<br>
-        I will always choose you 🤍
-      </div>
-    </div>
-  </section>
-
-  <script>
-    function createLily() {
-      const lily = document.createElement("div");
-      lily.className = "lily";
-
-      lily.innerHTML = `
-        <div class="stem"></div>
-        <div class="bell bell1"></div>
-        <div class="bell bell2"></div>
-        <div class="bell bell3"></div>
-      `;
-
-      lily.style.left = Math.random() * 100 + "vw";
-      lily.style.animationDuration = 7 + Math.random() * 6 + "s";
-      lily.style.transform = "scale(" + (0.7 + Math.random() * 0.7) + ")";
-
-      document.body.appendChild(lily);
-
-      setTimeout(() => {
-        lily.remove();
-      }, 13000);
-    }
-
-    function createGlow() {
-      const glow = document.createElement("div");
-      glow.className = "glow";
-      glow.style.left = Math.random() * 100 + "vw";
-      glow.style.animationDuration = 4 + Math.random() * 4 + "s";
-
-      document.body.appendChild(glow);
-
-      setTimeout(() => {
-        glow.remove();
-      }, 8000);
-    }
-
-    setInterval(createLily, 900);
-    setInterval(createGlow, 1200);
-
-    function showLetter() {
-      document.getElementById("letterSection").classList.remove("hidden");
-      document.getElementById("letterSection").scrollIntoView({ behavior: "smooth" });
-    }
-
-    function showMemories() {
-      document.getElementById("memorySection").classList.remove("hidden");
-      document.getElementById("memorySection").scrollIntoView({ behavior: "smooth" });
-    }
-
-    function showReasons() {
-      document.getElementById("reasonSection").classList.remove("hidden");
-      document.getElementById("reasonSection").scrollIntoView({ behavior: "smooth" });
-    }
-
-    function showFinal() {
-      document.getElementById("surprise").classList.remove("hidden");
-      createHearts();
-    }
-
-    function createHearts() {
-      for (let i = 0; i < 45; i++) {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerHTML = "🤍";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDelay = Math.random() * 2 + "s";
-
-        document.body.appendChild(heart);
-
-        setTimeout(() => {
-          heart.remove();
-        }, 6000);
-      }
-    }
-  </script>
+    setTimeout(() => heart.remove(), 6000);
+  }
+}
+</script>
 
 </body>
 </html>
