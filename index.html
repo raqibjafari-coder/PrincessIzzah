@@ -30,13 +30,12 @@ section {
 }
 
 .card {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.92);
   padding: 38px;
   border-radius: 30px;
-  max-width: 780px;
+  max-width: 820px;
   width: 100%;
   box-shadow: 0 15px 40px rgba(180,80,120,0.22);
-  border: 1px solid rgba(255,255,255,0.9);
 }
 
 h1 {
@@ -133,11 +132,14 @@ button:hover {
 }
 
 #surprise {
-  font-size: 24px;
   margin-top: 25px;
   color: #d94f8c;
   font-weight: bold;
   line-height: 1.6;
+}
+
+#surprise h2 {
+  font-size: 36px;
 }
 
 @media (max-width: 600px) {
@@ -199,32 +201,17 @@ button:hover {
       I love you so much, today, tomorrow, and always. 💗
     </p>
 
-    <button onclick="showFinalSection()">Open My Final Surprise 🎁</button>
-  </div>
-</section>
-
-<section id="finalSection" class="hidden">
-  <div class="card">
-    <h2>Just One More Thing... 💗</h2>
-
-    <p>
-      No matter what happens...<br><br>
-      No matter how many arguments we have...<br><br>
-      No matter how difficult life becomes...<br><br>
-      I will always choose you.<br><br>
-      Yesterday.<br>
-      Today.<br>
-      Tomorrow.<br>
-      And every tomorrow after that. 🤍
-    </p>
-
-    <button onclick="showFinal()">Click for Surprise 🎁</button>
+    <button onclick="showFinal()">Open My Surprise 🎁</button>
 
     <div id="surprise" class="hidden">
       <h2>I Love You 💗</h2>
       <p>
+        No matter what happens,<br>
+        I will always choose you.<br><br>
+
         Thank you for being my home, my comfort, my safe place,
         and my favorite person.<br><br>
+
         Forever and always. 🤍
       </p>
     </div>
@@ -257,11 +244,6 @@ function showEnvelope() {
 function showLetter() {
   document.getElementById("letterSection").classList.remove("hidden");
   document.getElementById("letterSection").scrollIntoView({ behavior: "smooth" });
-}
-
-function showFinalSection() {
-  document.getElementById("finalSection").classList.remove("hidden");
-  document.getElementById("finalSection").scrollIntoView({ behavior: "smooth" });
 }
 
 function showFinal() {
