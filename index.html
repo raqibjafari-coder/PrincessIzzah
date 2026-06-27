@@ -1,59 +1,179 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>For My Love</title>
+  <title>For My Princess ❤️</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background: linear-gradient(#ffd6e8, #fff3f8);
-      text-align: center;
-      padding: 40px;
       color: #5c2a3d;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 60px 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .card {
       background: white;
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 600px;
-      margin: auto;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      padding: 35px;
+      border-radius: 25px;
+      max-width: 700px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+      font-size: 45px;
     }
 
     button {
       background: #ff6fae;
       color: white;
       border: none;
-      padding: 12px 20px;
-      border-radius: 20px;
+      padding: 14px 25px;
+      border-radius: 25px;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 17px;
+      margin: 10px;
     }
 
-    #message {
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .hidden {
       display: none;
-      margin-top: 20px;
-      font-size: 20px;
+    }
+
+    .letter {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .heart {
+      position: fixed;
+      animation: floatUp 5s linear infinite;
+      color: #ff5fa2;
+      font-size: 24px;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+
+    .memory-card {
+      background: #fff0f6;
+      padding: 20px;
+      border-radius: 18px;
+      margin: 12px;
+    }
+
+    #surprise {
+      font-size: 28px;
+      margin-top: 25px;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="card">
-    <h1>Hi My Love ❤️</h1>
-    <p>This website is made specially for you.</p>
+  <section>
+    <div class="card">
+      <h1>For My Princess ❤️</h1>
+      <p>I made this little website specially for you.</p>
+      <button onclick="showLetter()">Open My Letter 💌</button>
+    </div>
+  </section>
 
-    <h2>Things I Love About You</h2>
-    <p>Your smile, your kindness, and the way you make my day better.</p>
+  <section id="letterSection" class="hidden">
+    <div class="card letter">
+      <h2>My Letter To You 💌</h2>
+      <p>
+        Dear my love,<br><br>
+        Thank you for being someone so special in my life.
+        You make my days brighter, my heart softer, and my life happier.
+        I am grateful for every moment with you.
+        <br><br>
+        I hope this small website makes you smile, because you deserve
+        all the happiness in the world.
+        <br><br>
+        I love you so much ❤️
+      </p>
+      <button onclick="showMemories()">See Our Memories 📸</button>
+    </div>
+  </section>
 
-    <button onclick="showMessage()">Click for a surprise</button>
+  <section id="memorySection" class="hidden">
+    <div class="card">
+      <h2>Our Memories 📸</h2>
+      <div class="memory-card">🌸 Our first special moment</div>
+      <div class="memory-card">💕 The times we laughed together</div>
+      <div class="memory-card">🌙 The little memories I never forget</div>
+      <button onclick="showReasons()">Why I Love You ❤️</button>
+    </div>
+  </section>
 
-    <p id="message">I love you so much ❤️ You are my favorite person.</p>
-  </div>
+  <section id="reasonSection" class="hidden">
+    <div class="card">
+      <h2>Why I Love You ❤️</h2>
+      <div class="memory-card">Your smile makes my day better.</div>
+      <div class="memory-card">Your kindness means so much to me.</div>
+      <div class="memory-card">You are my favorite person.</div>
+      <button onclick="showFinal()">Click for Surprise 🎁</button>
+      <div id="surprise" class="hidden">
+        No matter what happens, I will always choose you ❤️
+      </div>
+    </div>
+  </section>
 
   <script>
-    function showMessage() {
-      document.getElementById("message").style.display = "block";
+    function showLetter() {
+      document.getElementById("letterSection").classList.remove("hidden");
+      document.getElementById("letterSection").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function showMemories() {
+      document.getElementById("memorySection").classList.remove("hidden");
+      document.getElementById("memorySection").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function showReasons() {
+      document.getElementById("reasonSection").classList.remove("hidden");
+      document.getElementById("reasonSection").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function showFinal() {
+      document.getElementById("surprise").classList.remove("hidden");
+      createHearts();
+    }
+
+    function createHearts() {
+      for (let i = 0; i < 30; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDelay = Math.random() * 2 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 5000);
+      }
     }
   </script>
 
